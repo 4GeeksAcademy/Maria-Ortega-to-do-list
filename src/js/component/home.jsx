@@ -23,22 +23,22 @@ const Home = () => {
   return (
     <div className="text-center">
       <div className="top">
-        <h1> To-do List </h1>
+        <h1> To-do List </h1> 
         <input
           value={todo}
           type="text"
-          placeholder=" add task"
+          placeholder="Add new task"
           onChange={(e) => setTodo(e.target.value)}/>
-        <button onClick={() => addTodos(todo)} className="btn btn-success">
+        <button onClick={() => addTodos(todo)} className="new">
           Add Task
         </button>
       </div>
       <div className="bottom-list">
         {todos?.map((task, index) => (
-          <div key={index}>
-            {task.label}
+          <div className= "individual-task"key={index}>
+            <div> {task.label}</div>
             <button
-              className="btn btn-danger"
+              className="remove"
               onClick={() => removeTodos(task)}>
               Remove
             </button>
